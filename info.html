@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>ANTI-SUBSCRIPTION SOFTWARE CATALOGUE (ASC)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="cmun-typewriter.css" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+
+<style>
+.accordion {
+  color: #007064;
+  cursor: pointer;
+  padding: 0px;
+  margin-top:0.75em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.5rem;
+  transition: 0.8s;
+}
+
+.accordion:after {
+  content: '+'; /* Unicode character for "plus" sign (+) */
+  color: #007064;
+  float: left;
+  margin-right: 0.5rem;
+
+}
+
+.active:after {
+  content: "-"; /* Unicode character for "minus" sign (-) */
+}
+
+
+.active, .accordion:hover {
+  background-color: yellow;
+}
+
+.panel {
+  padding: 0px;
+  background-color: white;
+  max-height: 0;
+  overflow: auto;
+  transition: max-height 0.2s ease-out;
+}
+
+</style>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+
+
+</head>
+<body>
+
+
+  <!-- Top Nav
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="rectangle">
+<center>
+    <div class="inner">
+    <a href="index.html">ANTI-SUBSCRIPTION SOFTWARE CATALOGUE (ASC)</a><button aria-label="open  home page"><a href="index.html">
+        <img src="images/icon-close.svg" class="topright"></a></button>
+</center>
+</div>
+</div>
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve column" style="margin-top: 10%">
+       
+    <center>
+     <h1>
+      <img src="images/dingwall-beach.svg"><br>A·B·O·U·T<br>
+      <img src="images/dingwall-beach-reflect.svg">
+    </h1>
+      </a>
+    </center>
+      <hr><br>
+      <p>ABOUT THIS PROJECT:<br>
+        This website is a catalog of free, libre, open-source, and one-time fee software which can provide relief from monopolized and financialized platforms. Refuse the squeeze! Shout out to <a href="https://twitter.com/XdanielArt/status/1434611199140896772" target="_blank">@XdanielArt</a> for starting an initial list.</p>
+
+    </div>
+ 
+
+<table class="u-full-width">
+
+  <thead>
+    <tr>
+      <br>
+      <p>LEGEND:</p>
+<hr>
+      <p><img src="images/icon-free.svg" alt="icon free">&nbsp; FREE</p>
+      <hr>
+      <p><img src="images/icon-open-source.svg" alt="icon open-source">&nbsp; OPEN SOURCE</p>
+      <hr>
+      <p><img src="images/icon-1-time-fee.svg" alt="icon 1-time fee">&nbsp; 1-TIME FEE</p>
+      <hr>
+      <p><img src="images/icon-mac.svg" alt="icon mac">&nbsp; MAC</p>
+      <hr>
+      <p><img src="images/icon-windows.svg" alt="icon windows">&nbsp; WINDOWS</p>
+      <hr>
+      <p><img src="images/icon-linux.svg" alt="icon linux">&nbsp; LINUX</p>
+      <hr>
+      <p><img src="images/icon-ios.svg" alt="icon ios">&nbsp; IOS</p>
+      <hr>
+      <p><img src="images/icon-android.svg" alt="icon android">&nbsp; ANDROID</p>
+      <hr>
+    </tr>
+  </thead>
+</table>
+
+
+<div class="rectangle2">
+
+
+<br><br>
+<center><p>SEND SOFTWARE SUBMISSIONS (& CORRECTIONS) TO:</p>
+<a class="button button-primary" href="mailto:chrislange@ocadu.ca">chrislange@ocadu.ca</a></center>
+<br><br>
+ 
+
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</div></div>
+<script>
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+
+
+         
+      </div>
+    </div>
+  </div>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
