@@ -202,6 +202,26 @@ html is set to 62.5% so that all the REM measurements throughout Skeleton
 are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%; }
+
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #0C2926;
+  }
+ 
+a {
+  color: #007064; 
+text-decoration: none}
+a:hover {
+  background-color: yellow; 
+  transition: 0.4s;}
+
+  }
+}
+
+
 body {
   font-size: 1.75em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.8;
