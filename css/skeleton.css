@@ -218,9 +218,10 @@ html {
   }
  
 a {
-  color: #007064; 
+  color: yellow; 
 text-decoration: none}
 a:hover {
+  color: #0C2926;
   background-color: yellow; 
   transition: 0.4s;}
 
