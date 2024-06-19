@@ -216,7 +216,6 @@ html {
     color: #eee; 
     z-index:-1;
   }
-  }
  
 a {
   color: #007064; 
@@ -226,6 +225,13 @@ a:hover {
   transition: 0.4s;}
 
   }
+
+
+p {
+  font-family: "Computer Modern Typewriter";
+  color: #eee;
+  margin-top: 0; }
+
 }
 
 
