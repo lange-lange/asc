@@ -218,11 +218,8 @@ text-decoration: none}
 a:hover {
   color: #0C2926;
   background-color: yellow; 
-  transition: 0.4s;}
-
-  }
-
-
+  transition: 0.4s;
+}
 p {
   font-family: "Computer Modern Typewriter";
   color: #eee;
