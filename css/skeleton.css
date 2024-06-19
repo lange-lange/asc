@@ -209,11 +209,6 @@ html {
   body {
     color: #eee;
     background: #0C2926;
-    font-size: 1.75em; /* currently ems cause chrome bug misinterpreting rems on body element */
-    line-height: 1.8;
-    font-weight: 400;
-    font-family: "Computer Modern Typewriter", Lucida Grande, monospace;
-    color: #eee; 
     z-index:-1;
   }
  
