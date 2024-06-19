@@ -252,12 +252,14 @@ a:hover {
   transition: 0.4s;
   }
 
+
+/*
 @media (prefers-color-scheme: dark) 
 
 {
   body {
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
-  line-height: 1.8;
+ /*  line-height: 1.8;
   font-weight: 400;
   font-family: "Computer Modern Typewriter", Lucida Grande, monospace;
   color: red; 
@@ -275,16 +277,17 @@ a:hover {
   transition: 0.4s;
 }
 
-p {
+/*p {
   font-family: "Computer Modern Typewriter";
   color: #eee;
   margin-top: 0; 
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
-  line-height: 1.8;
+/*  line-height: 1.8;
   font-weight: 400;
   }
 
 }
+/*
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
