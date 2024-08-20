@@ -204,8 +204,8 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-size: 1.75em; /* currently ems cause chrome bug misinterpreting rems on body element */
-  line-height: 1.8;
+  font-size: 1.9em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.5;
   font-weight: 400;
   font-family: "Computer Modern Typewriter", Lucida Grande, monospace;
   color: #152F2C; 
@@ -253,7 +253,7 @@ a:hover {
   }
 
 
-/*
+/* TO EDIT SOON:
 @media (prefers-color-scheme: dark) 
 
 {
