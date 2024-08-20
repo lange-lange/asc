@@ -42,16 +42,23 @@ nav li a {
 
 }
 
+nav li a:hover {
+
+  background-color: #355e3b; 
+  color: beige;
+  transition: 0.4s;
+  }
+
+
 p {
   font-family: Times New Roman;
   font-size: 1.9rem;
   line-height: 1.5;}
 
-h4 {
-  margin-top: 1rem;}
 
 blockquote {
   font-family: Times New Roman;
+  color: black;
   font-size: 2rem;
   line-height: 1.5;
   letter-spacing: -.05rem;
@@ -94,6 +101,79 @@ background: radial-gradient(circle, rgba(245,245,220,1) 0%, rgba(255,255,255,1) 
   margin-right: 0.5rem;
 
 }
+
+
+.footnote :target {
+  background: yellow;
+}
+
+
+.footnote-circle {
+  background-color: yellow;
+  border-radius: 50%;
+  color: #007064;
+  font-size: 2.5rem;
+  float: left;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+}
+
+/**
+ * Initialiazing a `footnotes` counter on the wrapper
+ */
+article {
+  counter-reset: footnotes;
+}
+
+/**
+ * Inline footnotes references
+ * 1. Increment the counter at each new reference
+ * 2. Reset link styles to make it appear like regular text
+ */
+a[aria-describedby="footnote-label"] {
+  counter-increment: footnotes; /* 1 */
+  text-decoration: none; /* 2 */
+  color: inherit; /* 2 */
+  cursor: default; /* 2 */
+  outline: none; /* 2 */
+}
+
+/**
+ * Actual numbered references
+ * 1. Display the current state of the counter (e.g. `[1]`)
+ * 2. Align text as superscript
+ * 3. Make the number smaller (since it's superscript)
+ * 4. Slightly offset the number from the text
+ * 5. Reset link styles on the number to show it's usable
+ */
+a[aria-describedby="footnote-label"]::after {
+  content: '[' counter(footnotes) ']'; /* 1 */
+  vertical-align: super; /* 2 */
+  font-size: 0.5em; /* 3 */
+  margin-left: 2px; /* 4 */
+  color: blue; /* 5 */
+  text-decoration: underline; /* 5 */
+  cursor: pointer; /* 5 */
+}
+
+/**
+ * Resetting the default focused styles on the number
+ */
+a[aria-describedby="footnote-label"]:focus::after {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+
+
+[aria-label="Back to content"] {
+  font-size: 0.8em;
+}
+
+footer :target {
+
+}
+
 
 .active:after {
   content: "-"; /* Unicode character for "minus" sign (-) */
@@ -138,34 +218,38 @@ background: radial-gradient(circle, rgba(245,245,220,1) 0%, rgba(255,255,255,1) 
 
 
 </head>
-<body>
 
+<body>
 
   <!-- Top Nav
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div class="rectangle">
 <center>
     <div class="inner">
-        <button aria-label="open a-s-c instagram page"><a href="https://www.instagram.com/antisubscription/">
-
-        <img src="images/icon-ig.svg" class="topleft"></a></button aria-label="back to top of page">
-        
 
 <nav>
 <ul>
-  <li><a href="index.html">HOME</a></li> 
+  <li><a href="index.html">A-S-C</a></li> 
   <li><a href="writing.html">WRITING</a></li>
   <li><a href="newsletter.html">NEWSLETTER</a></li>
   <li><a href="info.html">ABOUT</a></li>
 </ul>
 </nav>
 
+<!--
         <button aria-label="open info page"><a href="info.html">
         <img src="images/icon-info.svg" class="topright"></a></button>
-</center>
+</center>-->
+
+
 </div>
 </div>
 
+<div>
+  <button aria-label="open a-s-c instagram page"><a href="https://www.instagram.com/antisubscription/">
+
+        <img src="images/icon-ig.svg" class="topright"></a></button aria-label="follow on instagram">
+</div>
 
 
   <!-- Primary Page Layout
@@ -174,50 +258,74 @@ background: radial-gradient(circle, rgba(245,245,220,1) 0%, rgba(255,255,255,1) 
     <div class="row">
       <div class="twelve column" style="margin-top: 8%">
       <center>
-      <img src="images/dingwall-beach.svg"><h1>Writing
-      </h1><img src="images/dingwall-beach-reflect.svg">
+      <img src="images/dingwall-beach.svg"><h1>Writing</h1><img src="images/dingwall-beach-reflect.svg">
       </a>
       </center>
 
-
 <hr>
-
-<li><a href="#bloated">Bloated Tools > Frequently Asked Questions</li></a>
-<li>Have related writing? <a href="mailto:chrislange@ocadu.ca">Get in touch today.</a></li>
-
-<hr><br>
-<h1 id="bloated">Bloated Tools (FAQ)</h1>   
+<center>
+<b>A-S-C Press</b><i span style="color:grey">: noun as in strain, pressure.<br>
+Synonyms: hurry, rush, stress,</i><i span style="color:black"> <b>urgency</b></i></span>
+</center>
 <hr>
-<i style="color:grey;">Question by: Kevin Auer, UT Austin, VCFA MFA GD. <br>
-By: Chris Lange, Toronto, Canada.<br>
-Date: September, 2023. Last updated: August 18, 2024<br>
+<br><br>
+
+<h4>Contents:</h4>
+
+<ol>
+  <li><a href="#bloated">Bloated Tools > Frequently Asked Questions</a></li>
+  <li>Have related writing? <a href="mailto:chrislange@ocadu.ca">Get in touch today.</a>
+  </li>
+</ol>
+
+  <i style="color:grey;">
+keywords: Challenging Industry Standards. Creative Workflow. Process. Standardization. Open-source. Popularity. Access. Barriers to Entry. Pedagogy. Teaching. Academia. Employment. Non-subscription. Switching Costs. Software-Agnostic.</i></span>
+<br>
+
+<hr><center>
+  <i style="color:grey;"><br>
+from: September, 2023. <br>last updated: August 20, 2024.</i>
+
+<h1 id="bloated">Bloated Tools</h1>   
+An FAQ for Students, Creative Workers, Teachers, and ______<br><br>
+<hr><br></center>
+
+<i style="color:grey;">
++ first question by: Kevin Auer, UT Austin, VCFA MFA GD<sup>24</sup>.<br>
++ follow-up frequently asked questions.<br>
++ answers: Chris Lange, Toronto, Canada, VCFA MFA GD<sup>24</sup>.<br>
+<br></i></center>
+
+
+
 <br>
 <hr>
-
-KEYWORDS: Challenging Industry Standards. Creative Workflow. Process. Standardization. Open-source. Popularity. Access. Barriers to Entry. Pedagogy. Teaching. Academia. Employment. Non-subscription. Switching Costs. Software-Agnostic.</i></span>
-
 <br>
-<hr>
-<br>
-<blockquote><i>“I really like the work. And I approached it through a very pragmatic lens. Many of my students can't afford Adobe and need to find alternatives to make their work. But I am always a bit hesitant to support this decision as I know that Adobe is generally understood as the industry standard. And I want to make sure they are prepared for future employment. Do you think this is changing? Are you seeing the industry move away from Adobe and being more open to other software? If not, because I am unfamiliar with most of the software on your site, would most of it at least.” </i> <br>— Kevin</blockquote>
+<blockquote>
+  <i>“I really like the work. And I approached it through a very pragmatic lens. Many of my students can't afford Ad0be and need to find alternatives to make their work. But I am always a bit hesitant to support this decision as I know that Ad0be is generally understood as the industry standard. And I want to make sure they are prepared for future employment. Do you think this is changing? Are you seeing the industry move away from Ad0be and being more open to other software? If not, because I am unfamiliar with most of the software on your site, would most of it at least.” </i> 
+  <br>— Kevin
+</blockquote>
 
 <hr>
+<article>
 <p style="color:grey">♟ Lange:</span> Hello Kevin!</p>
 
 <p>I believe it’s not about relying on any singular tool, or platform. Because software tools do come and go. As do platforms.</p>
-<p>A good example of this was Quark, who in its heyday owned 95% of the market. They stopped supporting newer operating systems on OS. Adobe InDesign then came and became the dominant desktop publishing software. Dependence on any monopoly can have long-term effects: cost; access; tiered features; and interoperability. What if the conditions change? What if the tool or platform you depend upon divests (shuts down). What if your access is revoked based on region? What if you suddenly cannot open a file format that is now proprietary? What if you cannot afford the increased cost of a perpetual licence? There’s an ever-evolving boom and bust cycle to software through access, popularity, subscription model, bloated updates over time, reliance, and divestment.</p>
 
-<h4>Access and popularity:</h4>
+<h4>Can ‘industry-standards’ change?</h4>
+<p>A good example of this was Quark, who in its heyday owned 95% of the market. They stopped supporting newer operating systems on OS. Ad0be InDesign then came and became the dominant desktop publishing software. Dependence on any monopoly can have long-term effects: cost; access; tiered features; and interoperability. What if the conditions change? What if the tool or platform you depend upon divests (shuts down). What if your access is revoked based on region? What if you suddenly cannot open a file format that is now proprietary? What if you cannot afford the increased cost of a perpetual licence? There’s an ever-evolving boom and bust cycle to software through access, popularity, subscription model, bloated updates over time, reliance, and divestment.</p>
+
+<h4>Isn’t the most popular, the industry-standard?</h4>
 <p>
-It is an access and ownership conundrum. A software that gets popular because of its usability and functionality first establishes itself as the anti-monopoly. They then become the new kid on the block. They have a more usable interface, familiarity, has an infinite canvas, displays ongoing file size, has extensive language support, better accessibility settings, interoperable, fast yet stable, doesn’t crash every few hours wasting days of work, auto saves, provides customizable options within each functionality, does not have prying eyes in file surveillance, doesn’t gather user data without permission, surveil your productivity, doesn’t perform sentiment analysis, does not prod with a chat bot (often a low-wage worker), loads files from proprietary file formats, doesn’t continually coerce with tiered deceptive design techniques, exports to a variety a formats, and files in ways that lower file size (taking up less server space (physical materials) in the computing cloud (physical materials). These are just some of the many reasons and needs a user might look for in software.</p>
+It is an access and ownership conundrum. A software that gets popular because of its usability and functionality first establishes itself as the anti-monopoly. They then become the new kid on the block. They have a more usable interface; familiarity, yet provides customizable options within each functionality; has an infinite canvas, yet displays ongoing file size; has extensive language support, and better accessibility settings, interoperable, and is fast yet stable. This new software doesn’t crash every few hours wasting days of work (auto saves), doesn't have prying eyes in file surveillance <a aria-describedby="footnote-label" href="#footnote1" id="footnote1-ref"></a> doesn’t gather user data without permission, lets you self-host your data, doesn't surveil your productivity, doesn’t perform sentiment analysis, doesn't prod with a chat bot (often a low-wage worker), doesn't loads files from proprietary file formats, doesn’t continually coerce with tiered deceptive design techniques, exports to a variety a formats, and files in ways that lower file size (taking up less server space (physical materials) in the computing cloud (physical materials). These are just some of the many reasons and needs a user might look for in software.</p>
 
 <blockquote><strike>Quark was the anti-Pagemaker. InDesign was the anti-Quark.<br>
-Freehand was the anti-Adobe Illustrator. Freehand was acquired by Adobe.<br>
-Figma was the anti-Adobe. Adobe failed to acquire Figma.</strike></blockquote>
+Freehand was the anti-Ad0be Illustrator. Freehand was acquired by Ad0be.<br>
+Figma was the anti-Ad0be. Ad0be failed to acquire Figma.</strike><a aria-describedby="footnote-label" href="#footnote2" id="footnote2-ref"></a>.</blockquote>
 
-<p>When the network effect “cumulative advantage,” a rule that popularity tends to amplify exponentially, is applied here to hardware and software companies, it benefits the existing dominant monopsony/monopoly. After prolonged use, you get used to that interface, that hardware, that software. Then your favourite is bought, sold, acquired, consolidated, divested, and discontinued. For example: see: <a href="https://killedbygoogle.com/" target="_blank">www. KilledByGoogle.com</a>, which is a list of 293 and counting Google discontinued tools.</p>
+<p>When the network effect “cumulative advantage,” a rule that popularity tends to amplify exponentially, is applied here to hardware and software companies, it benefits the existing dominant monopsony/monopoly. After prolonged use, you get used to that interface, that hardware, that software. Then your favourite is bought, sold, acquired, consolidated, divested, and discontinued. For example: see: <a href="https://killedbygoogle.com/" target="_blank">www.KilledByGoogle.com</a>, which is a list of 293 and counting Google discontinued tools.</p>
 
-<h4>Software as a subscription service:</h4>
+<h4>Why are we paying creative rent?</h4>
 <p>
 The designer no longer owns the tool as software, or license. Instead, they subscribe to an indefinite rent: a temporary yet perpetual license to make. How did the software change from a tool we owned with a 1-time fee — to a service we subscribe to indefinitely?</p>
 
@@ -291,6 +399,20 @@ There is subscription-fatigue the more services get digitized, and companies try
 The past few years have seen workers organizing after decades of anti-worker union-busting deregulation. There’s also antitrust legislation occurring simultaneously, globally. That’s one piece of diggin’ through the muck, just as Ida Tarbell did against Standard Oil. She had patience. Hopefully there’s some useful seeds sprinkled throughout for you to watch grow and share the load. 
 <br><span style="color:grey">—♟ Chris Lange</span></p>
 <br>
+
+
+<footer>
+  <h4 class="visually-hidden" id="footnote-label">Footnotes</h4>
+  <ol>    
+  <li id="footnote1"></a>Publishing, SftP. 2021. <a href="https://magazine.scienceforthepeople.org/vol24-2-dont-be-evil/keeping-you-on-track/">“Keeping You on Track • SftP Magazine.”</a> Science for the People Magazine. October 25, 2021.
+    <a href="#footnote1-ref" aria-label="Back to content">↩</a></li>
+  <li id="footnote2">Weatherbed, Jess. 2023. <a href="https://www.theverge.com/2023/12/18/24005996/adobe-figma-acquisition-abandoned-termination-fee">“Adobe Abandons $20 Billion Acquisition of Figma.”</a> The Verge. December 18, 2023.
+    <a href="#footnote2-ref" aria-label="Back to content">↩</a></li>
+
+  </ol>
+</footer>
+</article>
+
 <hr>
 <p style="color:grey">
 In response to growing costs of subscriptions, the A-S-C (Anti-Subscription Catalogue) was launched in December 2023. Say no to creative rent! <br><center><a class="button button-primary" href="https://www.instagram.com/antisubscription/">FOLLOW A-S-C ON IG</a></p></center>

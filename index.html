@@ -85,7 +85,7 @@ ul {
   overflow: hidden;
 }
 
-li {
+ li {
   float: left;
 }
 
@@ -95,6 +95,21 @@ li a {
 
 }
 
+li a:hover {
+  background-color: #355e3b; 
+  color: beige;
+  transition: 0.4s;
+  }
+
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: -1;
+}
 
 
 .accordion {
@@ -106,15 +121,22 @@ li a {
   border: none;
   text-align: left;
   outline: none;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   transition: 0.8s;
+  font-weight: 800; 
 }
 
 .accordion:after {
-  content: '+'; /* Unicode character for "plus" sign (+) */
+  background-color: yellow;
+  border-radius: 50%;
   color: #007064;
+  font-size: 2.5rem;
+  content: '+'; /* Unicode character for "plus" sign (+) */
   float: left;
   margin-right: 0.5rem;
+  width: 34px;
+  height: 34px;
+  text-align: center;
 
 }
 
@@ -166,27 +188,29 @@ li a {
 <div class="rectangle">
 <center>
     <div class="inner">
-        <button aria-label="open a-s-c instagram page"><a href="https://www.instagram.com/antisubscription/">
-
-        <img src="images/icon-ig.svg" class="topleft"></a></button aria-label="back to top of page">
-        
 
 
 <ul>
-  <li><a href="index.html">HOME</a></li> 
+  <li><a href="index.html">A-S-C</a></li> 
   <li><a href="writing.html">WRITING</a></li>
   <li><a href="newsletter.html">NEWSLETTER</a></li>
   <li><a href="info.html">ABOUT</a></li>
 </ul>
 
-
+<!--
         <button aria-label="open info page"><a href="info.html">
         <img src="images/icon-info.svg" class="topright"></a></button>
-</center>
+</center>-->
+
+
 </div>
 </div>
 
+<div>
+  <button aria-label="open a-s-c instagram page"><a href="https://www.instagram.com/antisubscription/">
 
+        <img src="images/icon-ig.svg" class="topright"></a></button aria-label="follow on instagram">
+</div>
 
 
 
