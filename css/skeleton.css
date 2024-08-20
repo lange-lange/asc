@@ -542,7 +542,13 @@ form {
   margin-bottom: 2.5rem; }
 
 
-img {padding-top: 0.5em;}
+img {
+
+  max-width: 100%;
+  height: auto;
+  padding-top: 0.5em;
+}
+
 
 
 
