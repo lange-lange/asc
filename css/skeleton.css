@@ -327,7 +327,7 @@ input[type="button"] {
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
-  border-radius: 2px;
+  border-radius: 10px;
   border: 1px;
   cursor: pointer;
   box-sizing: border-box; }
