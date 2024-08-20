@@ -30,9 +30,9 @@
 /* Rectangle 1 */
 .rectangle {
 position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0 auto;
+left: 50%;
+transform: translateX(-50%);
+margin: 0 auto;
 width: 360px;
 height: 44px;
 top: 2%;
