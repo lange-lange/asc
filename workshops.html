@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>ANTI-SUBSCRIPTION SOFTWARE CATALOGUE (ASC) - WRITING</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="cmun-typewriter.css" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+
+<style>
+
+
+body {background-color: #dfff00;}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  padding: 9px 10px;
+
+}
+
+nav li a:hover {
+
+  background-color: #007064; 
+  color: beige;
+  transition: 0.4s;
+  }
+
+
+p {
+  font-family: Times New Roman;
+  font-size: 1.9rem;
+  line-height: 1.5;}
+
+
+blockquote {
+  font-family: Times New Roman;
+  color: black;
+  font-size: 2rem;
+  line-height: 1.5;
+  letter-spacing: -.05rem;
+  hanging-punctuation: first;
+  background: radial-gradient(circle, rgba(245,245,220,1) 0%, rgba(255,255,255,1) 70%);  /*background: #F4F4F4;*/
+  padding: 5% 10%;
+}
+
+/* For devices up to 700px */
+@media (max-width: 700px) {
+ 
+blockquote {
+  font-family: Times New Roman;
+  font-size: 2rem;
+  letter-spacing: -.05rem;
+  line-height: 1.5;
+  hanging-punctuation: first;
+  background: radial-gradient(circle, rgba(245,245,220,1) 0%, rgba(255,255,255,1) 100%);  /*background: #F4F4F4;*/
+  padding: 5% 0%;
+  margin: 0;
+
+}
+
+}
+
+
+
+
+
+
+
+.accordion {
+  color: #007064;
+  cursor: pointer;
+  padding: 0px;
+  margin-top:0.75em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.5rem;
+  transition: 0.8s;
+}
+
+.accordion:after {
+  content: ’+’; /* Unicode character for "plus" sign (+) */
+  color: #007064;
+  float: left;
+  margin-right: 0.5rem;
+
+}
+
+
+
+/**
+ * Initialiazing a `footnotes` counter on the wrapper
+ */
+article {
+  counter-reset: footnotes;
+}
+
+/**
+ * Inline footnotes references
+ * 1. Increment the counter at each new reference
+ * 2. Reset link styles to make it appear like regular text
+ */
+a[aria-describedby="footnote-label"] {
+  counter-increment: footnotes; /* 1 */
+  text-decoration: none; /* 2 */
+  color: inherit; /* 2 */
+  cursor: default; /* 2 */
+  outline: none; /* 2 */
+}
+
+/**
+ * Actual numbered references
+ * 1. Display the current state of the counter (e.g. `[1]`)
+ * 2. Align text as superscript
+ * 3. Make the number smaller (since it’s superscript)
+ * 4. Slightly offset the number from the text
+ * 5. Reset link styles on the number to show it’s usable
+ */
+a[aria-describedby="footnote-label"]::after {
+  content: ’(’ counter(footnotes) ’)’; /* 1 */
+  vertical-align: super; /* 2 */
+  font-size: 0.75em; /* 3 */
+  margin-left: 2px; /* 4 */
+  color: teal; /* 5 */
+  text-decoration: none; /* 5 */
+  cursor: pointer; /* 5 */
+}
+
+/**
+ * Resetting the default focused styles on the number
+ */
+a[aria-describedby="footnote-label"]:focus::after {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+
+
+[aria-label="Back to content"] {
+  font-size: 0.8em;
+}
+
+footer :target {
+
+}
+
+
+.active:after {
+  content: "-"; /* Unicode character for "minus" sign (-) */
+}
+
+
+.active, .accordion:hover {
+  background-color: yellow;
+}
+
+.panel {
+  padding: 0px;
+  background-color: white;
+  max-height: 0;
+  overflow: auto;
+  transition: max-height 0.2s ease-out;
+}
+
+</style>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.svg">
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push([’trackPageView’]);
+  _paq.push([’enableLinkTracking’]);
+  (function() {
+    var u="https://asc.matomo.cloud/";
+    _paq.push([’setTrackerUrl’, u+’matomo.php’]);
+    _paq.push([’setSiteId’, ’1’]);
+    var d=document, g=d.createElement(’script’), s=d.getElementsByTagName(’script’)[0];
+    g.async=true; g.src=’https://cdn.matomo.cloud/asc.matomo.cloud/matomo.js’; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="https://asc.matomo.cloud/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+
+
+
+</head>
+
+<body>
+
+
+
+  <!-- Top Nav
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="rectangle">
+<center>
+    <div class="inner">
+
+<nav>
+<ul>
+  <li><a href="index.html">A-S-C</a></li> 
+   
+  <li><a href="writing.html">WRITING</a></li>
+  <li><a href="newsletter.html">NEWS</a></li>
+  <li><a href="info.html">ABOUT</a></li>
+  <li><a href="https://antisubscription.bigcartel.com/">SHOP↗</a></li>
+</ul>
+</nav>
+
+<!--
+        <button aria-label="open info page"><a href="info.html">
+        <img src="images/icon-info.svg" class="topright"></a></button>
+</center>-->
+
+
+</div>
+</div>
+
+<div>
+  <button aria-label="open a-s-c instagram page"><a href="https://www.instagram.com/antisubscription/">
+
+        <img src="images/icon-ig.svg" class="topright"></a></button aria-label="follow on instagram">
+</div>
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve column" style="margin-top: 8%">
+      <center>
+      <img src="images/dingwall-beach.svg"><h1>Workshops</h1><img src="images/dingwall-beach-reflect.svg">
+      </a>
+      </center>
+
+<hr>
+<center>
+<span style="color:grey"><i>The following page outlines workshop prompts, FREE to use.</i></span>
+</center>
+<hr>
+<br><br>
+
+<h4>Contents:</h4>
+
+<ol>
+  <li><a href="#bloated">Workshop #1: Neighbourhood Flier</a></li>
+</ol>
+
+
+<hr><center>
+  <i style="color:grey;"><br></i>
+
+<h1 id="bloated">#1: Neighborhood Flier</h1>   
+<br>
+  <span style="color:grey;"><i>
+Design a neighbourhood digital flier for an upcoming </span><b>local event</b>, <b>fictional <i>or</i> real</b>. 
+</i><br><br>
+<br></center>
+
+
+<hr>
+
+
+<h2>Timeline</h2>
+<ol>
+  <li><b>Prompt</b> <span style="color:grey;">(30 minutes)</span></li>
+  <li><b>Gather Layers and Assemble</b><span style="color:grey;"> (90 minutes)</span></li>
+
+<br><span style="color:grey;"><i>{ 1 hour lunch break! }</i></span></br><br>
+<li><b>Layout & Scan</b> <span style="color:grey;">(1.5 hour)</span>: You may use a variety of free and publicly accessible online tools from <a href="https://www.a-s-c.org/">www.a-s-c.org.</a></li>
+<li><b>Print</b> (1 hour): Together we will print each of your fliers on coloured paper. And I will email you a copy of the digital version.
+I will also add your digital version to a website page. Which you can add to your resume/CV!</li>
+<li><b>Celebrate!</b> Discuss each other’s fliers.</li>
+</ol>
+
+
+
+<article>
+<h2>Prompt</h2>
+<blockquote>
+<p>In a globalized world, being informed and inspired by your everyday life becomes ever important to be rooted in the <b>here and now</b>.</p>
+<p>This workshop focuses on <b>graphic design, typography, and do-it-yourself publishing</b>. It will explore <b>combining text and images</b> to create custom designs <b>to promote an event</b> for a <b>specific time and place</b>.</p>
+<p>Participants will be asked to contribute their fliers to an online gallery website.</p>   
+<p>You will understand the weight and potential of communicating with words and images in tandem. By understanding your message's clarity for a specific context, while embracing</b> to add to your portfolio. Perhaps this could inspire you to <b>hold space for local events!</b></p>
+</blockquote>
+<br>
+
+<hr>
+<h2>Sizes and formats:</h2>
+<ul>
+<li>Print: 8.5 inches x 11 inches</li>
+<li>Digital: 816 pixes x 1054 pixels</li></ul>
+
+<hr>
+
+<h2>Choose a neighbourhood and jot down:</h2>
+
+<ul>
+<li><b>Who</b> is this for?</li>
+<li><b>What</b> is this about?</li>
+<li><b>Where</b> does it take place?</li> 
+<li><b>When</b> does it happen?</li>
+<li><b>How</b> will people get there?</li>
+<li><b>How</b> long does it last?></li>
+<li><b>In your local neighbourhood, what type of event could exist?</b></li>
+</ul>
+
+
+</h3>
+<a class="button button-primary" href="mailto:chrislange@ocadu.ca">EMAIL YOUR FLIER AND I WILL ADD IT TO THIS PAGE</a></center><br>
+
+
+
+
+
+
+
+
+
+
+<center>
+<!-- 
+      <a class="button button-primary" href="tk">DOWNLOAD THE WORKSHOP PDF</a></center>
+-->
+
+<div>
+  <br>
+  <center>
+    <hr><br>
+<blockquote><i>
+“So far, I’ve argued that practices of close attention can help us see into nuanced ecologies of being and identity. This kind of understanding has a few important requirements. First, it asks us to loosen our grip on the idea of discrete entities, simple origin stories, and neat A-to-B casualties. It also requires humility and openness, because to seek context is already to acknowledge that you don’t have the whole story. And perhaps most important, an ecological understanding takes time. Context is what appears when you hold your attention open for long enough; the longer you hold it, the more context appears.</i><br><br> —Jenny Odell, <i>How To Do Nothing, Resisting the Attention Economy</i>, p.155; 2019.</blockquote>
+</center>
+<hr>
+</div>
+<br>
+<div>
+  <br>
+          <center>  
+      <a class="button button-primary" href="/info.html">CONTRIBUTE TODAY</a></center>
+  <br><br>  
+<br></div>
+
+<div class="rectangle2">
+
+
+
+ 
+
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</div></div>
+<script>
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+
+
+         
+      </div>
+    </div>
+  </div>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
