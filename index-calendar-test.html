@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Calendar Image Upload</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+  h1 {
+    text-align: center;
+  }
+  #calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+  }
+  .day {
+    border: 1px solid #ccc;
+    min-height: 100px;
+    cursor: pointer;
+    position: relative;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  .day-number {
+    font-weight: bold;
+  }
+  .day img {
+    max-width: 100%;
+    max-height: 60px;
+    margin-top: 8px;
+    display: block;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  #uploadModal {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    transform: translate(-40%, -30%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+  #uploadModal input[type="file"] {
+    margin-bottom: 15px;
+  }
+  #modalBackdrop {
+    display: none;
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.3);
+    z-index: 5;
+  }
+  button {
+    margin-right: 10px;
+  }
+  
+</style>
+</head>
+<body>
+
+<h1>Calendar Outfit Image Upload</h1>
+<div id="calendar"></div>
+
+<div id="modalBackdrop"></div>
+<div id="uploadModal">
+  <h3>Upload Image for <span id="modalDate"></span></h3>
+  <input type="file" id="fileInput" accept="image/*" />
+  <br />
+  <button id="saveBtn">Save Image</button>
+  <button id="cancelBtn">Cancel</button>
+</div>
+
+<script>
+  const calendarEl = document.getElementById('calendar');
+  const uploadModal = document.getElementById('uploadModal');
+  const modalDateEl = document.getElementById('modalDate');
+  const fileInput = document.getElementById('fileInput');
+  const saveBtn = document.getElementById('saveBtn');
+  const cancelBtn = document.getElementById('cancelBtn');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+
+  let selectedDate = null;
+  const storageKey = 'calendarImages';
+
+  // Format date yyyy-mm-dd
+  function formatDate(date) {
+    return date.toISOString().split('T')[0];
+  }
+
+  // Render calendar of current month
+  function renderCalendar() {
+    calendarEl.innerHTML = '';
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+
+    // Start first day of month
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+    const daysInMonth = lastDay.getDate();
+
+    // Day of week for first day (0 Sunday - 6 Saturday)
+    const startDay = firstDay.getDay();
+
+    // Load saved images
+    const savedImages = JSON.parse(localStorage.getItem(storageKey) || '{}');
+
+    // Fill empty slots at beginning
+    for(let i = 0; i < startDay; i++) {
+      const emptyEl = document.createElement('div');
+      calendarEl.appendChild(emptyEl);
+    }
+
+    // Create day cells
+    for(let day=1; day <= daysInMonth; day++) {
+      const dayEl = document.createElement('div');
+      dayEl.className = 'day';
+
+      const dateObj = new Date(year, month, day);
+      const dateStr = formatDate(dateObj);
+
+      const dayNumberEl = document.createElement('div');
+      dayNumberEl.textContent = day;
+      dayNumberEl.className = 'day-number';
+      dayEl.appendChild(dayNumberEl);
+
+      // If image saved for day, show thumbnail
+      if(savedImages[dateStr]) {
+        const imgEl = document.createElement('img');
+        imgEl.src = savedImages[dateStr];
+        imgEl.alt = `Outfit image for ${dateStr}`;
+        dayEl.appendChild(imgEl);
+      }
+
+      dayEl.addEventListener('click', () => openModal(dateStr));
+      calendarEl.appendChild(dayEl);
+    }
+  }
+
+  function openModal(dateStr) {
+    selectedDate = dateStr;
+    modalDateEl.textContent = dateStr;
+    fileInput.value = '';
+    uploadModal.style.display = 'block';
+    modalBackdrop.style.display = 'block';
+  }
+
+  function closeModal() {
+    uploadModal.style.display = 'none';
+    modalBackdrop.style.display = 'none';
+  }
+
+  saveBtn.addEventListener('click', () => {
+    if(fileInput.files.length === 0) {
+      alert('Please select an image file to upload.');
+      return;
+    }
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      let savedImages = JSON.parse(localStorage.getItem(storageKey) || '{}');
+      savedImages[selectedDate] = reader.result;
+      localStorage.setItem(storageKey, JSON.stringify(savedImages));
+      closeModal();
+      renderCalendar();
+    };
+    reader.readAsDataURL(file);
+  });
+
+  cancelBtn.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', closeModal);
+
+  renderCalendar();
+</script>
+
+</body>
+</html>
