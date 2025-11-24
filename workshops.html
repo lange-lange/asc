@@ -69,6 +69,54 @@ blockquote {
   border-radius: 12px;
 }
 
+.lightbox {
+  /* Default to hidden */
+  display: none;
+
+  /* Overlay entire screen */
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* A bit of padding around image */
+  padding: 1em;
+
+  /* Translucent background */
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Unhide the lightbox when it's the target */
+.lightbox:target {
+  display: block;
+}
+
+.lightbox span {
+  /* Full width and height */
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  /* Size and position background image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+/* For devices larger than 550px 
+@media (min-width: 550px) and (max-width: 700px) {
+
+.one-third-column-category {
+
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;}
+
+}
+
 /* For devices up to 700px */
 @media (max-width: 700px) {
  
@@ -154,10 +202,6 @@ a[aria-describedby="footnote-label"]:focus::after {
 
 [aria-label="Back to content"] {
   font-size: 0.8em;
-}
-
-footer :target {
-
 }
 
 .active:after {
@@ -253,7 +297,9 @@ footer :target {
 <h4>Contents:</h4>
 
 <ol>
-  <li><a href="#bloated">Workshop #1: Neighbourhood Flyer</a></li>
+  <li><a href="#workshop-1">Workshop #1: January 11, 2025</a></li>
+  <li><a href="#workshop-2">Workshop #2: January 25, 2025</a></li>
+  <li><a href="#workshop-3">Workshop #3: November 22, 2025</a></li>
 </ol>
 
 <hr><center>
@@ -261,7 +307,7 @@ footer :target {
 
 <br>
 
-<h1 id="bloated">#1: Neighbourhood Flyer</h1>   
+<h1>Design a Neighbourhood Flyer</h1>   
 </center>
 
 <br>
@@ -270,7 +316,7 @@ footer :target {
 <blockquote><h3>
   <b>Prompt:</b> Design a neighbourhood digital flyer for an upcoming </span><b>local event</b>, <b>fictional <i>or</i> real</b>.</h3> 
 </i>
-<a href="#exhibit" class="button button-primary">View the exhibition</a></blockquote>
+<a href="#exhibit" class="button button-primary">View the online exhibition</a></blockquote>
 </blockquote>
 </center>
 
@@ -377,7 +423,7 @@ I will also add your digital version to a website page. Which you can add to you
 <hr>
 <br><br>
 <h1 id="exhibit">Online Flier Exhibition</h1>
-<h4>Workshop #1: January 11, 2025</h4>
+<h4 id="workshop-1">Workshop #1: January 11, 2025</h4>
 
 <p>Participants: <b>9</b></p>
 
@@ -392,7 +438,7 @@ I will also add your digital version to a website page. Which you can add to you
         Flower Market by Cienna
         </p>
       </div>
-            
+
     <div class="one-third column category">
       <img src="images/Diana-Flyer-OCADU.jpeg" width="100%" alt="a neighbourhood event flier about mountaineering in Mississauga Valley. Made in a portfolio clinic at OCADU by Diana">
       <p>
@@ -457,7 +503,7 @@ I will also add your digital version to a website page. Which you can add to you
 
   <hr>
   <br><br>
-  <h4>Workshop #2: January 25, 2025</h4>
+  <h4 id ="workshop-2">Workshop #2: January 25, 2025</h4>
   
   <p>Participants: <b>3</b></p>
   
